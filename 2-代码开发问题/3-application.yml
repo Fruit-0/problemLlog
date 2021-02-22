@@ -1,0 +1,75 @@
+#1-问题时间：2021/2/2223:24
+#
+#2-问题描述：
+#  application.yml的一些常见配置
+#3-问题关键字：
+#  application.yml
+#4-问题原因：
+#
+#5-问题解决方案：
+
+
+#Tomcat 配置
+server:
+  port: 8080  #设置请求端口
+  servlet:
+    context-path: /cl #指定 Tomcat的请求路径
+    encoding:
+      charset: UTF-8  #设置 Tomcat 编码格式
+
+
+
+#------------------------
+#    mybatis 配置
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml #加载 mapper.xml 文件到容器中
+  type-aliases-package: com.cl.springboot.pojo  # 别名，简化 mapper.xml 中请求响应参数类型
+  configuration:
+    map-underscore-to-camel-case: true  #开启驼峰映射
+
+
+
+#------------------------
+#    日志设置（可以打印 执行的 SQL 语句）
+
+logging:
+  level:
+    com:
+      cl:
+        springboot:
+          mapper: debug #指定打印对应文件夹的日志，并设置打印的日志的级别 （com.cl.springboot.mapper 包）
+  file:
+    name: D:/spring.log #指定日志文件生成的位置
+
+
+
+
+
+#------------------------
+#    数据源配置
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yeb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone = GMT
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource  # Type 设置使用何种类型的数据源
+
+    #Druid 数据源属性配置 （需要创建数据源配置类，进行配置才会生效）
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #  配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500

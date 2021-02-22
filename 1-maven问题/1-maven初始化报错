@@ -1,0 +1,55 @@
+1-问题时间：2021年2月22日22点09分
+
+2-问题描述：
+    maven初始化时报错
+    控制台提示：
+     Unresolved plugin: 'org.apache.maven.plugins:maven-jar-plugin:2.4'
+
+     Unresolved plugin: 'org.apache.maven.plugins:maven-compiler-plugin:3.1'
+
+     Unresolved plugin: 'org.apache.maven.plugins:maven-surefire-plugin:2.12.4'
+
+     Unresolved plugin: 'org.apache.maven.plugins:maven-install-plugin:2.4'
+
+     Unresolved plugin: 'org.apache.maven.plugins:maven-site-plugin:3.3'
+
+3-问题关键字：
+    maven；maven-jar-plugin
+
+4-问题原因：
+
+    ？？未知，应该是仓库中缺少相关jar包
+
+5-问题解决方案：
+
+解决方法如下：
+---------------
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-install-plugin</artifactId>
+            <version>2.4</version>
+            <type>maven-plugin</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.7</version>
+            <type>maven-plugin</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.12.4</version>
+            <type>maven-plugin</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>3.3</version>
+            <type>maven-plugin</type>
+        </dependency>
+-----------------
+        就是在报错项目的pom.xml文件中添加这些就可以了，等同步好了，还可以把这部分删除免得代码冗余。
