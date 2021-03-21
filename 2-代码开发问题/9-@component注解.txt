@@ -1,0 +1,15 @@
+1-问题时间：2021/3/2118:00
+
+2-问题描述：
+    类头部的@Component是什么意思
+3-问题关键字：
+
+4-问题原因：
+
+5-问题解决方案：
+
+    @Component：
+    定义Spring管理Bean
+
+    把普通pojo就是普通JavaBeans实例化到spring容器中，相当于配置文件中的<bean id="" class=""/>
+

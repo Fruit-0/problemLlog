@@ -1,0 +1,20 @@
+1-问题时间：2021/3/2123:56
+
+2-问题描述：
+
+3-问题关键字：
+
+4-问题原因：
+
+5-问题解决方案：
+
+
+            @NoArgsConstructor和@AllArgsConstrutor注解是lombok插件生成不同构造方法的注解，来完成项目中不同构造方法的需求。
+
+    @NoArgsConstructor ： 生成一个无参数的构造方法
+
+    @AllArgsContructor： 生成一个包含所有参数的构造方法
+
+    @Data : 注解在类上, 为类提供读写属性, 此外还提供了 equals()、hashCode()、toString() 方法
+
+       好处：不需要自己写构造方法，代码简洁规范
