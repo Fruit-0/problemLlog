@@ -1,0 +1,21 @@
+1-问题时间：2021/3/720:27
+
+2-问题描述：
+    thymeleaf基本信息掌握
+3-问题关键字：
+
+4-问题原因：
+
+5-问题解决方案：
+
+    (1)thymeleaf文件位置
+        在resource目录下新增templates文件夹，*.html文件放在这里
+
+    (2)请求的写法
+        @RequestMapping("/demo")
+        public String demo(){
+            return "demo";
+        }
+
+        thymeleaf模板文件可以直接使用文件名跳转，如：return "demo";会跳转到resource目录下新增templates文件夹下的名为demo.xml的文件
+
