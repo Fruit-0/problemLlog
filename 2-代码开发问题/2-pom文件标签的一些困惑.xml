@@ -560,11 +560,11 @@
                     - compile ：默认范围，用于编译
                     - provided：类似于编译，但支持你期待jdk或者容器提供，类似于classpath
                     - runtime: 在执行时需要使用
-                    - test:    用于test任务时使用
+                    - Test:    用于test任务时使用
                     - system: 需要外在提供相应的元素。通过systemPath来取得
                     - systemPath: 仅用于范围为system。提供相应的路径
                     - optional:   当项目自身被依赖时，标注依赖是否传递。用于连续依赖时使用-->
-                <scope>test</scope>
+                <scope>Test</scope>
                 <!--仅供system范围使用。注意，不鼓励使用这个元素，并且在新的版本中该元素可能被覆盖掉。该元素为依赖规定了文件系统上的路径。需要绝对路径而不是相对路径。推荐使用属性匹配绝对路径，例如${java.home}。-->
                 <systemPath></systemPath>
                 <!--当计算传递依赖时， 从依赖构件列表里，列出被排除的依赖构件集。即告诉maven你只依赖指定的项目，不依赖项目的依赖。此元素主要用于解决版本冲突问题-->
