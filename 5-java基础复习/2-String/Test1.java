@@ -16,7 +16,8 @@ public class Test1 {
         StringBuffer buffer = new StringBuffer("111");
         String concat = a.concat("2");
         System.out.println(concat);
-
+        System.out.println(a+2);
+        int b = builder.length();
 
     }
 
